@@ -1,13 +1,18 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+typedef struct ops
+{
+	char *c;
+	int (*f)();
+} op_t;
 int _printf(const char *format, ...);
-int d_write_signed_dec(int i);
-int i_write_signed_dec(int i);
-int c_write_char(char c);
-int s_write_str(char str);
-int o_write_unsigned_oct(int i);
-int u_write_unsigned_int(int i);
-int x_write_unsigned_int(int i);
+int d_write(va_list args_ptr);
+int i_write(va_list args_ptr);
+int c_write(va_list args_ptr);
+int s_write(va_list args_ptr);
+int o_write(va_list args_ptr);
+int u_write(va_list args_ptr);
+int x_write(va_list args_ptr);
 int _putchar(char c);
 #endif
