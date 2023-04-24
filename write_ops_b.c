@@ -46,8 +46,7 @@ int percent_write(void)
 {
 	int len;
 
-	len = 1;
-	_putchar('%');
+	len = _putchar('%');
 	return (len);
 }
 
