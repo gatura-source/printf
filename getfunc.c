@@ -22,7 +22,6 @@ int (*getfunc(char *s))(va_list args_ptr)
 		{"%o", o_write},
 		{"%c", c_write},
 		{"%%", percent_write},
-		{"\%", percent_write},
 		{NULL, NULL}
 	};
 	int i;
