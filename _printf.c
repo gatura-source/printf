@@ -41,12 +41,16 @@ int _printf(const char *format, ...)
 				len += f(args_ptr);
 				i = i + 2;
 			}
+			else
+			{
+				_putchar(format[i]);
+				len++;
+				i++;
+			}
 		}
-		_putchar(format[i]);
-		len++;
-		i++;
 		bzero(s, 3);
 	}
+	free(s);
 	va_end(args_ptr);
 	return (len);
 }
