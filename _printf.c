@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
  * _printf - printf from the hood
@@ -20,6 +21,7 @@ int _printf(const char *format, ...)
 	va_list args_ptr;
 
 	i = 0;
+	len = 0;
 	va_start(args_ptr, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
@@ -41,6 +43,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		_putchar(format[i]);
+		len++;
 		i++;
 		bzero(s, 3);
 	}

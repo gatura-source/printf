@@ -2,7 +2,8 @@
 #include "main.h"
 #include <stddef.h>
 #include <stdarg.h>
-
+#include <string.h>
+#include <stdio.h>
 /**
  * s_write - handles string
  * @args_ptr: variadic params list
@@ -13,30 +14,26 @@
 int s_write(va_list args_ptr)
 {
 	char *s;
-	int i;
+	int j;
 
 	s = va_arg(args_ptr, char *);
-	i = 0;
+	j = 0;
 	if (s != NULL)
 	{
-		i = 0;
-		while (s[i] != '\0')
+		while (s[j] != '\0')
 		{
-			_putchar(s[i]);
-			i++;
+			j += _putchar(s[j]);
 		}
-		return (i);
 	}
 	else
 	{
 		s = "(null)";
-		while (s[i] != '\0')
+		while (s[j] != '\0')
 		{
-			_putchar(s[i]);
-			i++;
+			j += _putchar(s[j]);
 		}
-		return (i);
 	}
+	return (strlen(s));
 }
 /**
  * percent_write - handles %
@@ -47,8 +44,11 @@ int s_write(va_list args_ptr)
 
 int percent_write(void)
 {
+	int len;
+
+	len = 1;
 	_putchar('%');
-	return (1);
+	return (len);
 }
 
 /**
