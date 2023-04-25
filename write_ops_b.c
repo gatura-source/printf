@@ -93,9 +93,9 @@ int i_write(va_list args_ptr)
 {
 	int n;
 	int i;
-	int nums[25];
-	int m;
 	int j;
+	char nums[25];
+	int m;
 
 	n = va_arg(args_ptr, int);
 	i = 0;
@@ -125,7 +125,7 @@ int i_write(va_list args_ptr)
 	j = i - 1;
 	while (j >= 0)
 	{
-		_putchar(nums[j]);
+		_putchar(nums[j] + '0');
 		j--;
 	}
 	return (i);
