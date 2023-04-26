@@ -73,12 +73,12 @@ int d_write(va_list args_ptr)
 	if (n < 0)
 	{
 		i += _putchar('-');
-		n = abs(n);
 		goto case2;
 	}
 case2:
 	if (n > 0)
 	{
+		n = abs(n);
 		m = 0;
 		while (n != 0)
 		{
