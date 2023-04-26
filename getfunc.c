@@ -17,6 +17,8 @@ int (*getfunc(char *s))(va_list args_ptr)
 		{"%s", s_write},
 		{"%c", c_write},
 		{"%%", percent_write},
+		{"%d", d_write},
+		{"%i", i_write},
 		{NULL, NULL}
 	};
 	int i;
