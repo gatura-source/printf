@@ -67,34 +67,31 @@ int d_write(va_list args_ptr)
 
 	i = 0;
 	n = va_arg(args_ptr, int);
+	if (n == 0)
+	{
+		i += _putchar('0');
+	}
 	if (n < 0)
 	{
-		_putchar('-');
+		i += _putchar('-');
 		n = abs(n);
 		goto case2;
 	}
 case2:
 	if (n > 0)
 	{
-		n = abs(n);
+		m = 0;
 		while (n != 0)
 		{
-			m = n % 10;
-			nums[i] = m;
+			m = m * 10 + n % 10;
 			n /= 10;
-			i++;
-		};
-	}
-	if (n == 0)
-	{
-		i = _putchar('0');
-		return (i);
-	}
-	j = i - 1;
-	while (j >= 0)
-	{
-		_putchar(nums[j] + '0');
-		j--;
+		}
+		while (m > 0)
+		{
+			j = m % 10;
+			i += _putchar(j + 48);
+			m /= 10;
+		}
 	}
 	return (i);
 }
