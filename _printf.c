@@ -46,6 +46,11 @@ int _printf(const char *format, ...)
 				len++;
 				i++;
 			}
+		
+		}
+		else
+		{
+			return (-1);
 		}
 		bzero(s, 3);
 	}
