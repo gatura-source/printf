@@ -61,6 +61,7 @@ int d_write(va_list args_ptr)
 {
 	int n;
 	int i;
+	int j;
 	int m;
 	int nums[25];
 
@@ -76,27 +77,26 @@ case2:
 	if (n > 0)
 	{
 		n = abs(n);
-		while (n > 0)
+		while (n != 0)
 		{
 			m = n % 10;
 			nums[i] = m;
-			i++;
 			n /= 10;
+			i++;
 		};
 	}
 	if (n == 0)
 	{
-		n = abs(0);
-		nums[i] = n;
-		i++;
+		i = _putchar('0');
+		return (i);
+	}
+	j = i - 1;
+	while (j >= 0)
+	{
+		_putchar(nums[j] + '0');
+		j--;
 	}
 	return (i);
-	i--;
-	while (i >= 0)
-	{
-		_putchar(nums[i] + '0');
-		i--;
-	}
 }
 /**
  * i_write - handles %i
