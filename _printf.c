@@ -27,9 +27,9 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	s = malloc(sizeof(char) * 3);
 	while (format[i] != '\0')
 	{
+		s = malloc(sizeof(char) * 3);
 		if (s != NULL)
 		{
 			s[0] = format[i];
@@ -53,8 +53,8 @@ int _printf(const char *format, ...)
 			return (-1);
 		}
 		bzero(s, 3);
+		free(s);
 	}
-	free(s);
 	va_end(args_ptr);
 	return (len);
 }
