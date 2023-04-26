@@ -62,7 +62,6 @@ int d_write(va_list args_ptr)
 	int n;
 	int i;
 	int j;
-	int nums[25];
 	long int m;
 
 	i = 0;
@@ -84,15 +83,13 @@ case2:
 		while (n != 0)
 		{
 			m = m * 10 + n % 10;
-			nums[i] = m;
 			n /= 10;
-			i++;
 		}
-		j = i - 1;
-		while (j >= 0)
+		while (m > 0)
 		{
-			_putchar(nums[j] + '0');
-			j--;
+			j = m % 10;
+			i += _putchar(j + 48);
+			m /= 10;
 		}
 	}
 	return (i);
