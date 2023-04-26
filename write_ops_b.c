@@ -62,7 +62,7 @@ int d_write(va_list args_ptr)
 	int n;
 	int i;
 	int j;
-	int m;
+	long int m;
 
 	i = 0;
 	n = va_arg(args_ptr, int);
