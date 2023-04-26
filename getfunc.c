@@ -14,12 +14,7 @@
 int (*getfunc(char *s))(va_list args_ptr)
 {
 	ops_t ops[] = {
-		{"%d", d_write},
 		{"%s", s_write},
-		{"%i", i_write},
-		{"%p", p_write},
-		{"%x", x_write},
-		{"%o", o_write},
 		{"%c", c_write},
 		{"%%", percent_write},
 		{NULL, NULL}
